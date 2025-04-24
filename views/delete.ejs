@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+
+<% if(locals.postCollection.title.length > 0){ %>
+    <form method="POST" action="/deleteProcess">
+        <% for(let i = postCollection.title.length - 1; i >= 0; i--){ %>   
+            <div class="posts">
+                <h2 class="title"> <%= postCollection.title[i] %> </h2>
+                <p class="body"> <%= postCollection.body[i] %> </p>
+                <p class="date"> <%= postCollection.date[i] %> </p>
+                <button type="submit" value="<%= i %>" name="deleteValue">Delete</button>
+            </div> 
+
+            <hr>
+        <% } %>
+    </form>
+    
+<% } else{ %>
+    <h1>There are no blog posts to delete.</h1>
+<% } %> 
+
+</html>

@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+<h1>Blog posts: </h1>
+<% if(locals.postCollection.title.length){ %>
+    <% for(let i = postCollection.title.length - 1; i >= 0; i--){ %>
+        <div class="posts">
+            <h2 class="title"><%= postCollection.title[i]%> </h2>
+            <p class="body"> <%= postCollection.body[i] %> </p>
+            <p class="date"> <%= postCollection.date[i] %> </p>
+        </div>
+        
+    <% } %>
+<% } else{ %>
+    <h2>There are no posts here.</h2>
+<% } %>
+
+</html>

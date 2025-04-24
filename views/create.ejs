@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+    <form id="blogInput" action="/submit" method="POST">
+    <label>Blog title</label> 
+    <br>
+    <input type="text" name="blogTitle">
+    <br>
+    <label>Blog entry</label>
+    <br>
+    <textarea form="blogInput" rows="4" cols="40" name="blogEntry"></textarea>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+</html>

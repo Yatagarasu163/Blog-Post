@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+
+<% if(locals.postCollection.title.length > 0){ %>
+    <form method="POST" action="/editProcess" id="blogInput">
+        <% for(let i = postCollection.title.length - 1; i >= 0; i--){ %>    
+            <div class="posts">
+                <h2 class="title"> <%= postCollection.title[i] %> </h2>
+                <br>
+                <input type="text" name="blogTitle">
+                <p class="body"> <%= postCollection.body[i] %> </p>
+                <textarea form="blogInput" rows="4" cols="40" name="blogEntry"></textarea>
+                <p class="date"> <%= postCollection.date[i] %> </p>
+                <button type="submit" value="<%= i %>" name="editValue">Edit</button>
+            </div>
+            <hr>
+        <% } %>
+    </form>
+    
+<% } else{ %>
+    <h1>There are no blog posts to edit.</h1>
+<% } %> 
+</html>

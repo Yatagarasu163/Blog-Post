@@ -1,0 +1,9 @@
+<%- include("partials/header.ejs") %>
+
+
+<% if(locals.postCollection.length > 0){ %>
+    <form method="POST" action="/editProcess">
+            <%- postCollection[i] %>
+    </form>
+    
+<% }
